@@ -46,13 +46,19 @@
   text-decoration: underline;
 }
 
+.jam .room-header a[href^='https://gitlab.com']
+{
+  background-image: url('/img/bazaar/gitlab-logo.svg');
+  background-position: 20px 50%;
+  padding-left: 23px;
+}
+
 .jam .room-header a[href^='https://github.com']
 {
   background-image: url('/img/bazaar/github-logo.svg');
   background-repeat: no-repeat;
   background-size: 18px;
   padding-left: 23px;
-  text-decoration: underline;
 }
 
 .jam .room-header a[href^='https://beondeck.com']
@@ -205,6 +211,13 @@
   padding-left: 48px;
 }
 
+.jam .room-header .call-to-action a[href^='https://gitlab.com']
+{
+  background-image: url('/img/bazaar/gitlab-logo.svg');
+  background-position: 20px 50%;
+  padding-left: 48px;
+}
+
 .jam .room-header .call-to-action a[href^='https://beondeck.com']
 {
   background-image: url('/img/bazaar/ondeck-logo.png');
@@ -327,5 +340,5 @@
 }
 
 .jam .human-radius {
-  border-radius: 42%;
+  border-radius: 26%;
 }

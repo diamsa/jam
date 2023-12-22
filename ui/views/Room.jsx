@@ -8,7 +8,7 @@ import {useMqParser} from '../lib/tailwind-mqp';
 import {useWidth} from '../lib/tailwind-mqp';
 import Navigation from './Navigation';
 import {userAgent} from '../lib/user-agent';
-import {colors} from '../lib/theme.js';
+import {colors, isDark} from '../lib/theme.js';
 import {usePushToTalk, useCtrlCombos} from '../lib/hotkeys';
 import {useJam} from '../jam-core-react';
 
@@ -117,6 +117,7 @@ export default function Room({room, roomId, uxConfig}) {
 
   const colorTheme = state.room?.color ?? 'default';
   const roomColor = colors(colorTheme);
+  const textColor = isDark(roomColor.avatarBg) ? roomColor.text.light : roomColor.text.dark;
 
   return (
     <div className="h-screen w-screen flex flex-col justify-between">
@@ -188,6 +189,7 @@ export default function Room({room, roomId, uxConfig}) {
                   canSpeak={!hasMicFailed}
                   peerState={myPeerState}
                   info={myInfo}
+                  handRaised={handRaised}
                 />
               )}
               {stagePeers.map(peerId => (
@@ -199,13 +201,16 @@ export default function Room({room, roomId, uxConfig}) {
                   peerState={peerState[peerId]}
                   info={identities[peerId]}
                   onClick={iModerate ? () => setEditRole(peerId) : undefined}
+                  handRaised={handRaised}
                 />
               ))}
             </ol>
           </div>
 
-          <br />
-          {/* Audience */}
+          <hr />
+          <p style={{color: textColor}}>
+          Audience
+          </p>
           {!stageOnly && (
             <>
               <ol className="flex flex-wrap">

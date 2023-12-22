@@ -5,7 +5,7 @@ export {StateType, IdentityInfo, IdentityType, RoomType, ActionType, Props};
 const defaultProps = {
   roomId: null as string | null,
   userInteracted: false,
-  micMuted: false,
+  micMuted: true,
   handRaised: false,
   autoJoin: false,
   hasMediasoup: false,
@@ -77,7 +77,7 @@ const defaultState = {
   peerState: {} as Record<string, PeerState | undefined>,
   myPeerState: {
     inRoom: false,
-    micMuted: false,
+    micMuted: true,
     leftStage: false,
     isRecording: false,
   },
@@ -86,7 +86,7 @@ const defaultState = {
   handRaised: false,
 
   soundMuted: true,
-  micMuted: false,
+  micMuted: true,
   audioFile: null,
   audioFileElement: null,
   myAudio: null as MediaStream | null,

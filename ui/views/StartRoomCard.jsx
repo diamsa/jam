@@ -14,25 +14,19 @@ export default function StartRoomCard({
         color: '#ffffcc',
         width: '300px',
         cursor: 'pointer',
-    };
-
-    var leftPart = {
         float: 'left',
-    };
-    var rightPart = {
-        float: 'right',
     };
 
     return (
         <div>
         <a href={`./${roomId}`}>
-        <div className="select-none h-12 px-6 text-lg rounded-lg mt-3"
+        <div className="select-none h-24 px-6 text-lg rounded-lg mt-3"
              style={coloringStyle}
         >
-            <div style={leftPart}
+            <div 
                 className="human-radius p-1 relative flex justify-center"
             >
-                Join {userCount} chatting in {roomId}
+                Join {userCount} chatting in <br /><br /> {roomId}
             </div>
         </div>
         </a>

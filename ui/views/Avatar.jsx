@@ -17,6 +17,7 @@ export function StageAvatar({
   peerState,
   reactions,
   info,
+  handRaised,
   onClick,
 }) {
   let mqp = useMqParser();
@@ -69,6 +70,15 @@ export function StageAvatar({
                 )}
                 style={{backgroundColor: roomColor.buttons.primary}}
               />
+              <div className={handRaised ? '' : 'hidden'}>
+                <div
+                  className={mqp(
+                    'absolute w-9 h-9 top-0 left-0 md:top-0 md:left-0 rounded-full bg-white text-lg border-2 border-gray-400 flex items-center justify-center'
+                  )}
+                >
+                  ✋🏽
+                </div>
+              </div>              
             </div>
           </div>
           {/* div for showing mute/unmute status */}

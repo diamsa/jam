@@ -10,6 +10,7 @@ export default function Start({newRoom = {}, urlRoomId, roomFromURIError}) {
   const [loadingRooms, setLoadingRooms] = useState(false);
   const [roomList, setRoomList] = useState([]);
   const [{room}, {enterRoom, setProps, createRoom, listRooms}] = useJam();
+  
   let {stageOnly = false} = newRoom;
 
   useEffect(() => {
@@ -49,7 +50,12 @@ export default function Start({newRoom = {}, urlRoomId, roomFromURIError}) {
     : roomColors.text.dark;
 
   return (
-    <div className="p-0 max-w-md h-screen flex flex-col justify-evenly m-auto text-center items-center">
+    <div className="p-10 max-w-s h-screen flex flex-col justify-evenly m-auto text-center items-center">
+
+      <div>
+        <img src="{jamServerLogo}" />
+      </div>
+
       <div
         className={
           roomFromURIError
@@ -93,10 +99,14 @@ export default function Start({newRoom = {}, urlRoomId, roomFromURIError}) {
         }
 
         <br />
-        <p style={{color: textColor}}>
-          Built by <a href="https://gitlab.com/jam-systems/jam/">Jam Systems</a> and <br />
-          <a href="https://github.com/diamsa/jam">Nostr Live Audio Spaces</a> Developers.
-        </p>
+        <div style={{color: textColor}} className="jam">
+          <p style={{color: textColor, backgroundColor: roomColors.background}} className="room-header">
+          Built by Jam Systems and Nostr Live Audio Spaces Developers.
+          </p>
+          <p style={{color: textColor, backgroundColor: roomColors.background}} className="room-header">
+          Download from <a href="https://github.com/diamsa/jam">github.com/diamsa/jam</a> to host and run your own instance.
+          </p>
+        </div>
       </div>
     </div>
   );

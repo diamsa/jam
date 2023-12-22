@@ -313,7 +313,9 @@ function getConnections(roomId) {
   return [...connections];
 }
 function getPeers(roomId) {
-  return getConnections(roomId).map(c => c.peerId);
+  let connections = getConnections(roomId);
+  let peers = connections.map(c => c.peerId);
+  return peers;
 }
 
 // p2p pub sub
