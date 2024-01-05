@@ -43,6 +43,7 @@ const verify = (identity, publicKey) => {
 
       const checkEventReturned = setTimeout(() => {
         const error_msg = `Relays did not returned any events`;
+        pool.close();
         throw new Error(error_msg);
       }, 2500);
 

@@ -1,6 +1,6 @@
 # Nostr Live Audio Spaces: Jam Edition
 
-This software provides an open source audio space for users of Nostr.  
+This software provides an open source audio space for users of Nostr.
 
 Users can quickly login with existing Nostr accounts and have name and avatar image set from profile data used throughout Nostr.
 
@@ -15,32 +15,32 @@ Roadmap
   - ✅ Fetch and display Name (kind 0)
   - ✅ Fetch and display Avatar Image from picture (kind 0)
   - ✅ Fetch and display Lightning Address (kind 0)
-  - ⬜ Nostr Address (kind 0)
-  - ⬜ Description/About (kind 0)
+  - ✅ Nostr Address (kind 0)
+  - ✅ Description/About (kind 0)
 - ☑️ Room Customizations
   - ✅ Set Room Background Picture
   - ✅ Set Room Colors from Preconfigured Palette/Theme
-  - ⬜ Set Room Colors from Custom Selection
-  - ⬜ Set Room Emoji Reactions vs Default
+  - ✅ Set Room Colors from Custom Selection
+  - ✅ Set Room Emoji Reactions vs Default
   - ✅ Allow multiple avatars per row to fit on desktop
-  - ⬜ Add Collapse/Expand to hide/show the room description
+  - ✅ Add Collapse/Expand to hide/show the room description
   - ⬜ Room Arrangement of Avatars (Stage/Audience, Alphasort, other groupings...?)
 - ⬜ User Avatar / Card View Customizations
   - ⬜ Drag and Drop position of Avatars in room
   - ⬜ Resize / Zoom avatars
   - ⬜ Allow Users to set their in room status (e.g. AFK, BRB, Present)
   - ⬜ Raise Hand as Audience member and Speaker
-  - ⬜ Show microphone on/muted for speakers
-  - ⬜ Show indication when speaker is speaking
+  - ✅ Show microphone on/muted for speakers
+  - ✅ Show indication when speaker is speaking
 - ⬜ Profile Details View
   - ⬜ Edit Personal Profile to set name, picture, about, lud16, nip05
-  - ⬜ Follow Button to add to contact list (kind 3)
-  - ⬜ Unfollow Button to remove from contact list (kind 3)
+  - ✅ Follow Button to add to contact list (kind 3)
+  - ✅ Unfollow Button to remove from contact list (kind 3)
 - ⬜ View User Profile
-  - ⬜ Display name, about, avatar, nostr address on popup
-  - ⬜ Verify nostr address
-  - ⬜ Follow User Action
-  - ⬜ Unfollow User Action
+  - ✅ Display name, about, avatar, nostr address on popup
+  - ✅ Verify nostr address
+  - ✅ Follow User Action
+  - ✅ Unfollow User Action
 - ☑️ Reaction Customizations
   - ✅ Update Default Emoji Reactions
   - ⬜ Target user for sending reaction
@@ -69,10 +69,9 @@ Roadmap
   - ⬜ List of code contributors, supporters, producers.. contact and links
   - ⬜ Contact information for server operator
 
-
 ## About Nostr:
 
-NOSTR is an acronym meaning "Notes and Other Stuff Transmitted through Relays". It is an alternative and open protocol for exchanging simple structured information publicly through relays your client(s) are connected to.  With Nostr, you cannot be deplatformed, and you are not fed an algorithm by default.  You can move between clients that evolve over time. For more information, check out [Nostr.how](https://nostr.how/en/what-is-nostr)
+NOSTR is an acronym meaning "Notes and Other Stuff Transmitted through Relays". It is an alternative and open protocol for exchanging simple structured information publicly through relays your client(s) are connected to. With Nostr, you cannot be deplatformed, and you are not fed an algorithm by default. You can move between clients that evolve over time. For more information, check out [Nostr.how](https://nostr.how/en/what-is-nostr)
 
 ## About Jam:
 
@@ -85,6 +84,3 @@ Hosting your own Instance is easy...
 Follow the [Install](INSTALL.md) guidance for setting up your server
 
 Periodically [Update](UPDATE.md) your install with changes
-
-
-
