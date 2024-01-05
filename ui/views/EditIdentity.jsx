@@ -6,6 +6,7 @@ import {useJam} from '../jam-core-react';
 import {getUserMetadata, setDefaultZapsAmount} from '../nostr/nostr';
 import {nip19} from 'nostr-tools';
 import {isDark, colors} from '../lib/theme';
+import {UploadFile} from './Svg';
 
 function addNostr(identities, handle, nostrNote) {
   if (!handle) return;
@@ -32,6 +33,7 @@ export default function EditIdentity({close}) {
   let [nostrInput, setNostrInput] = useState(nostrIdentity?.verificationInfo);
   const [showErrorMsg, setErrorMsg] = useState(false);
   const [showNostrVerify, setShowNostrVerify] = useState(false);
+  const [pictureName, setPictureName] = useState(undefined);
   const [isLoading, setIsLoading] = useState(false);
   let [defaultZap, setDeafultZap] = useState(
     localStorage.getItem('defaultZap') ?? ''
@@ -119,8 +121,7 @@ export default function EditIdentity({close}) {
     let identities = [];
     addNostr(identities, nostr, nostrInput);
 
-    const selectedFile = document.querySelector('.edit-profile-file-input')
-      .files[0];
+    const selectedFile = document.getElementById('file_upload').files[0];
 
     setDefaultZapsAmount(defaultZap);
 
@@ -152,11 +153,33 @@ export default function EditIdentity({close}) {
           <span className="text-gray-300"> (optional)</span>
         </div>
         <br />
-        <input
+        {/* <input
           type="file"
           accept="image/*"
           className="edit-profile-file-input rounded placeholder-gray-400 bg-gray-50 w-72"
-        />
+        /> */}
+        <div class="max-w-xl">
+          <label class="flex justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none">
+            <span class="flex items-center space-x-2">
+              <UploadFile />
+              <span class="font-medium text-gray-600">
+                {pictureName
+                  ? pictureName
+                  : ' Drop files to Attach, or browse your device'}
+              </span>
+            </span>
+            <input
+              type="file"
+              id="file_upload"
+              onChange={e => {
+                const fileName = e.target.value.slice(12);
+                setPictureName(fileName);
+              }}
+              accept="image/*"
+              class="hidden"
+            />
+          </label>
+        </div>
         <div className="p-2 text-gray-500 italic">
           Set your profile picture. If your picture is too large, try
           compressing it{' '}
